@@ -1,0 +1,33 @@
+<div class='flex flex-row flex-wrap'>
+{% for stat in stats %}
+    <div class='m-2 p-2'>
+        <h3 class='text-2xl underline mb-3'>{{ stat.label}}</h3>
+        {% if stat.values %}
+            <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
+                <thead class="bg-gray-100 dark:bg-gray-700">
+                    <tr>
+                        <td class="py-2 px-2 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">Label</td>
+                        <td class="py-2 px-2 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">Value</td>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                {% for v in stat.values %}
+                    <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <td class="p-1 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ v.0 }}</td>
+                        <td class="p-1 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ v.1 }}</td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            
+        {% else %}
+            
+            <div class='text-xl text-center'>
+                {{ stat.value }}
+            </div>
+            
+        {% endif %}
+    </div>
+{% endfor %}
+</div>

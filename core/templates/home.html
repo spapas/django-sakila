@@ -8,14 +8,11 @@
 </head>
 <body>
 <div class="flex flex-col h-screen justify-between">  
-  
 
 {% include "_nav.html" %}
 
 <main class="container mx-auto mb-auto bg-green-200">
-  1{% for film in films %}
-    {{ film }}
-  {% endfor %}2
+  {% include "_stats.html" %}  
 </main>
 
 

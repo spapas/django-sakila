@@ -1,3 +1,4 @@
 Django==4.0.3
 django-extensions==3.1.5
+django-simple-stats==0.1.0
 Werkzeug==2.0.3
